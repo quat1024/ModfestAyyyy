@@ -1,0 +1,43 @@
+{
+  "first": {
+    "text": "This will be a translation key later! Your value of 'wee' is {0}.",
+    "formats": [ "wee" ],
+    "options": [
+      {
+        "target": "test:next",
+        "text": "How are you doing? {}",
+        "formats": [ "wee" ]
+      },
+      {
+        "target": "test:epic",
+        "text": "Secret",
+        "conditions": [
+          {
+            "condition": "compare_variable",
+            "variable": "wee",
+            "at_least": 1
+          }
+        ]
+      }
+    ]
+  },
+  "next": {
+    "text": "I'm doing okay. Thanks for talking to me. As a present I am now your friend and will set your variable to 1.",
+    "pre_actions": [
+      {
+        "action": "set",
+        "variable": "wee",
+        "value": 1
+      }
+    ]
+  },
+  "epic": {
+    "text": "We're friends now so that's pretty epic lmao. Have a diamond!",
+    "post_actions": [
+      {
+        "action": "give_item",
+        "item": "minecraft:diamond"
+      }
+    ]
+  }
+}
